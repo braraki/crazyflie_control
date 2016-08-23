@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Starts Crazyflie Server -->
+  <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch">
+  </include>
+
+  <arg name="name1" default="ace"/>
+  <group ns="$(arg name1)" >
+	  <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+	    <arg name="name" value="$(arg name1)" />
+	  </include>
+   </group>
+  
+</launch>
