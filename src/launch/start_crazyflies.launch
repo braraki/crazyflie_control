@@ -5,11 +5,18 @@
   <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch">
   </include>
 
-  <arg name="name1" default="ace"/>
+  <arg name="name1" default="q1"/>
   <group ns="$(arg name1)" >
 	  <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
 	    <arg name="name" value="$(arg name1)" />
 	  </include>
-   </group>
+  </group>
+
+  <arg name="name2" default="q2"/>
+  <group ns="$(arg name2)" >
+	  <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+	    <arg name="name" value="$(arg name2)" />
+	  </include>
+  </group>
   
 </launch>
